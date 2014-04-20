@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>KissSlider</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<script src="js/jquery.js"></script>
+<link href="css/common.css" rel="stylesheet"/>
+<style>
+ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	font-weight: normal;
+}
+.title{
+	font-weight: bolder;
+	padding-bottom:10px;
+}
+#left,#right{
+}
+#left{
+	position:relative;
+}
+#bg{
+	width:100%;
+	position:absolute;
+	z-index: -1;
+	top:0px;
+	left:0px;
+	background-image: url("image/bg.jpg");
+	background-repeat: round;
+	background-size: cover;
+}
+#left .content{
+}
+#left li{
+	font-size: 20px;
+	background-color: #333;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #494949;
+}
+#left li:hover{
+}
+#left li a{
+	color:#ccc;
+	text-decoration:none;
+}
+#left a:hover {
+	font-weight: bold;
+}
+#right{
+	padding: 20px;
+	border-width: 1px;
+	border-left-style: solid;
+	border-color: #ccc;
+}
+#first{
+}
+#first table{
+	width:100%;
+	border-collapse:collapse;
+}
+#first tr:hover{
+	background-color: #ccc;
+	color: #555;
+}
+#first td{
+	border: 1px solid #555;
+	padding: 10px;
+}
+#self-assessment,#internship{
+	margin-top: 20px;
+}
+#self-assessment .content{
+	border-width:1px;
+	border-style:solid;
+	padding:10px;
+	border-radius: 5px;
+}
+#internship ul{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+#internship li{
+	border-style: solid;
+	border-width: 1px;
+	border-bottom-width: 0px;
+	padding: 10px;
+	line-height: 1.5em;
+}
+#internship li:hover{
+	background-color: #ccc;
+}
+#internship .description{
+	font-weight:bolder;
+}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<div class="col2">
+	<div id="left">
+		<div class="content">
+			<div class="h1">卢伟标</div>
+			<ul class="stacked-nav">
+				<li><a href="./KissSlider/index.html">Kiss Slider</a></li>
+				<li><a href="./index.html">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="col8">
+<div id="right">
+	<div id="first">
+		<table>
+			<tr>
+				<td style="width: 80px;">主页：</td>
+				<td><a class="en" style="color:#333;" href="http://bearkid.github.io">BearKid.github.io</a></td>
+				<td rowspan="3" style="width:110px;"><img src="image/me.jpg"/></td>
+			</tr>
+			<tr>
+				<td>教育：</td>
+				<td>暨南大学 | 电子商务 | 本科</td>
+			</tr>
+			<tr>
+				<td>证书：</td>
+				<td>2011/12 大学英语四级</br>2014/03 大学英语六级</td>
+			</tr>
+			<tr>
+				<td>E-mail：</td>
+				<td colspan="2">1030240314@qq.com</td>
+			</tr>
+			<tr>
+				<td>手机：</td>
+				<td colspan="2">15889676260</td>
+			</tr>
+			<tr>
+				<td>其他：</td>
+				<td colspan="2">男 | 1993年1月生 | 深圳-南山区</td>
+			</tr>
+		</table>
+	</div>
+	<div id="self-assessment">
+		<div class="title">自我评价</div>
+		<div class="content">
+			主要接触JAVA，有J2EE开发经验，参与过《深圳欢乐谷内部业务系统项目》等的开发。</br>
+			懂网页设计、PHP、C语言，数据库。</br>
+			了解数据结构、算法等计算机相关知识。</br>
+			对软件、游戏开发、网站开发感兴趣。</br>
+		</div>
+	</div>
+	<div id="internship">
+		<div class="title">实习经历</div>
+		<ul>
+			<li style="border-radius: 5px 5px 0px 0px;"><strong>金蝶软件（深圳） | 渠道伙伴业务部 | 实习生</strong>  2013/07 -- 2013/08</br> 行业类别：计算机软件 | 企业性质：上市公司</br>
+			工作描述：<strong>使用photoshop等软件制作宣传期刊，与合作伙伴进行沟通</strong>
+			</li>
+			<li><strong>深圳哈克文化有限公司 | 运营部 | 实习生</strong>  2012/07 -- 2012/08</br>
+			行业类别：娱乐/体育/休闲 | 企业性质：民营</br>
+			工作描述：<strong>引导顾客完成职业体验流程</br></strong>
+			</li>
+			<li><strong>深圳市兴泰季候风服饰有限公司 | 电子商务部 | 销售客服</strong>  2011/11 -- 2011/11</br>
+			行业类别：耐用消费品（服饰/纺织/皮革/家具/家电） | 企业性质：民营</br>
+			工作描述：<strong>淘宝客服</strong></br>
+			</li>
+			<li><strong>真心网 | 推广部 | 实习生</strong> 2011/10 -- 2011/11</br>
+			行业类别：互联网/电子商务 | 企业性质：民营</br>
+			工作描述：<strong>负责网站的SEO工作</strong></br>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+</body>
+<script>
+var leftPart = $("#left");
+var leftBg = leftPart.children(".cover");
+var rightPart = $("#right");
+leftPart.css("height",rightPart.outerHeight());
+leftBg.css("height",rightPart.outerHeight());
+$("#bg").css("height",rightPart.outerHeight());
+</script>
+</html>
