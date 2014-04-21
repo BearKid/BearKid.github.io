@@ -20,6 +20,9 @@ ul{
 }
 #left{
 	position:relative;
+	border-width: 1px;
+	border-right-style: solid;
+	border-color: #ccc;
 }
 #bg{
 	width:100%;
@@ -35,12 +38,12 @@ ul{
 }
 #left li{
 	margin-left: -100%;
-	width: 100%;
 	font-size: 20px;
 	background-color: #333;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px dashed #494949;
+	overflow:hidden;
 }
 #left li:hover{
 }
@@ -53,12 +56,8 @@ ul{
 }
 #right{
 	padding: 20px;
-	border-width: 1px;
-	border-left-style: solid;
-	border-color: #ccc;
 }
-#first{
-}
+#first{visibility:hidden;}
 #first table{
 	width:100%;
 	border-collapse:collapse;
@@ -71,14 +70,22 @@ ul{
 	border: 1px solid #555;
 	padding: 10px;
 }
+/*
+#portrait{position:absolute; top:-10%; left:-10%; width:130%; display:none;}
+*/
 #self-assessment,#internship{
 	margin-top: 20px;
+	visibility: hidden;
+}
+#self-assessment{
+	overflow:hidden;
 }
 #self-assessment .content{
 	border-width:1px;
 	border-style:solid;
 	padding:10px;
 	border-radius: 5px;
+	visibility:hidden;
 }
 #internship ul{
 	border-bottom-width: 1px;
@@ -121,7 +128,7 @@ ul{
 				<td style="width: 80px;">主页：</td>
 				<td><a class="en" style="color:#333;" href="http://bearkid.github.io">BearKid.github.io</a></td>
 				<td rowspan="3" style="width:110px;height: 165px;position: relative;padding: 0px;">
-					<img id="portrait" src="image/me.jpg" style="position: absolute;top: -10%;left: -10%;width: 130%;"/>
+					<img id="portrait" src="image/me.jpg" />
 				</td>
 			</tr>
 			<tr>
@@ -157,7 +164,7 @@ ul{
 	</div>
 	<div id="internship">
 		<div class="title">实习经历</div>
-		<ul>
+		<ul class="content">
 			<li style="border-radius: 5px 5px 0px 0px;"><strong>金蝶软件（深圳） | 渠道伙伴业务部 | 实习生</strong>  2013/07 -- 2013/08</br> 行业类别：计算机软件 | 企业性质：上市公司</br>
 			工作描述：<strong>使用photoshop等软件制作宣传期刊，与合作伙伴进行沟通</strong>
 			</li>
@@ -185,21 +192,48 @@ var leftBg = leftPart.children(".cover");
 var rightPart = $("#right");
 leftPart.css("height",rightPart.outerHeight());
 leftBg.css("height",rightPart.outerHeight());
-
 $("#bg").css("height",rightPart.outerHeight());
-$("#portrait").animate({
-	width:"100%",
-	top:0,
-	left:0,
-},1000);
+
 <!-- animation -->
 var list = $("#left li");
-list.eq(0).animate({margin-left:0},1000);
+var li1 = list.eq(0);
+var liWidth = $("#left").width()-li1.css("padding-left").replace("px","")- li1.css("padding-right").replace("px","");
+list.css("width",liWidth);
+var liSpeed = 400;
+list.eq(0).animate({"margin-left":0},liSpeed);
 setTimeout(function(){
-	list.eq(1).animate({margin-left:0});
-},1500);setTimeout(function(){
-	list.eq(2).animate({margin-left:0});
-},2000);
+	list.eq(1).animate({"margin-left":0},liSpeed);
+},liSpeed);
+setTimeout(function(){
+	list.eq(2).animate({"margin-left":0},liSpeed);
+},2*liSpeed);
+/*setTimeout(function(){
+	$("#portrait").fadeIn(100).animate({
+		"width":"100%",
+		"top":0,
+		"left":0,
+	},500);
+},3*liSpeed);*/
+
+var slideSpeed = 1500;
+$("#first").css({"visibility":"visible","display":"none"}).slideDown(slideSpeed);
+setTimeout(function(){
+	var selfAssessment = $("#self-assessment").css({"visibility":"visible",});
+	selfAssessment.children(".title").hide().fadeIn(slideSpeed);
+	//selfAssessment.children(".content").hide().slideDown(slideSpeed);
+	var content = selfAssessment.children(".content");
+	content.css({
+		"width":content.width(),
+		"visibility":"visible",
+		"margin-left":100%,
+	}).animate({"margin-left":0},slideSpeed);
+},slideSpeed);
+setTimeout(function(){
+	var internship = $("#internship").css({"visibility":"visible",});
+	internship.children(".title").hide().fadeIn(slideSpeed);
+	internship.children(".content").hide().slideDown(slideSpeed);
+},2*slideSpeed);
 
 </script>
 </html>
+
