@@ -34,6 +34,8 @@ ul{
 #left .content{
 }
 #left li{
+	margin-left: -100%;
+	width: 100%;
 	font-size: 20px;
 	background-color: #333;
 	padding-top: 10px;
@@ -104,8 +106,9 @@ ul{
 		<div class="content">
 			<div class="h1">卢伟标</div>
 			<ul class="stacked-nav">
+				<li><a href="http://jnueca.com">Blog</a></li>
+				<li><a href="https://github.com/BearKid/">Github</a></li>
 				<li><a href="./KissSlider/index.html">Kiss Slider</a></li>
-				<li><a href="./index.html">Blog</a></li>
 			</ul>
 		</div>
 	</div>
@@ -117,7 +120,9 @@ ul{
 			<tr>
 				<td style="width: 80px;">主页：</td>
 				<td><a class="en" style="color:#333;" href="http://bearkid.github.io">BearKid.github.io</a></td>
-				<td rowspan="3" style="width:110px;"><img src="image/me.jpg"/></td>
+				<td rowspan="3" style="width:110px;height: 165px;position: relative;padding: 0px;">
+					<img id="portrait" src="image/me.jpg" style="position: absolute;top: -10%;left: -10%;width: 130%;"/>
+				</td>
 			</tr>
 			<tr>
 				<td>教育：</td>
@@ -174,11 +179,27 @@ ul{
 </div>
 </body>
 <script>
+<!-- fit dom elements to window-->
 var leftPart = $("#left");
 var leftBg = leftPart.children(".cover");
 var rightPart = $("#right");
 leftPart.css("height",rightPart.outerHeight());
 leftBg.css("height",rightPart.outerHeight());
+
 $("#bg").css("height",rightPart.outerHeight());
+$("#portrait").animate({
+	width:"100%",
+	top:0,
+	left:0,
+},1000);
+<!-- animation -->
+var list = $("#left li");
+list.eq(0).animate({margin-left:0},1000);
+setTimeout(function(){
+	list.eq(1).animate({margin-left:0});
+},1500);setTimeout(function(){
+	list.eq(2).animate({margin-left:0});
+},2000);
+
 </script>
 </html>
