@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<title>KissSlider</title>
+<title>BearKid</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="author" content="bearkid.github.io">
+<meta name="keywords" content="slider,jquery,html,js,css,github,网页设计,简历,电子商务">
+<meta name="description" content="我叫卢伟标，暨南大学电子商务专业的一枚学生，这是我的个人主页">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <script src="js/jquery.js"></script>
 <link href="css/common.css" rel="stylesheet"/>
 <style>
@@ -39,7 +43,6 @@ ul{
 #left li{
 	margin-left: -100%;
 	font-size: 20px;
-	background-color: #333;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border-bottom: 1px dashed #494949;
@@ -48,7 +51,7 @@ ul{
 #left li:hover{
 }
 #left li a{
-	color:#ccc;
+	color:#555;
 	text-decoration:none;
 }
 #left a:hover {
@@ -67,12 +70,18 @@ ul{
 	color: #555;
 }
 #first td{
-	border: 1px solid #555;
+	border-bottom: 1px solid #555;
 	padding: 10px;
 }
-/*
-#portrait{position:absolute; top:-10%; left:-10%; width:130%; display:none;}
-*/
+#first .icon{
+	width: 1em;
+	height: 1em;
+	padding: 10px;
+	vertical-align: middle;
+}
+#first span{
+	vertical-align:middle;
+}
 #self-assessment,#internship{
 	margin-top: 20px;
 	visibility: hidden;
@@ -111,8 +120,8 @@ ul{
 <div class="col2">
 	<div id="left">
 		<div class="content">
-			<div class="h1">卢伟标</div>
-			<ul class="stacked-nav">
+			<div><img src="image/logo.png"/></div>
+			<ul class="stacked-nav" style="border-top: 2px solid;">
 				<li><a href="http://jnueca.com">Blog</a></li>
 				<li><a href="https://github.com/BearKid/">Github</a></li>
 				<li><a href="./KissSlider/index.html">Kiss Slider</a></li>
@@ -125,30 +134,33 @@ ul{
 	<div id="first">
 		<table>
 			<tr>
-				<td style="width: 80px;">主页：</td>
-				<td><a class="en" style="color:#333;" href="http://bearkid.github.io">BearKid.github.io</a></td>
-				<td rowspan="3" style="width:110px;height: 165px;position: relative;padding: 0px;">
+				<td style="width: 105px;border-top:1px solid;"><img class="icon" src="image/home.png"/><span>主页：</span></td>
+				<td style="border-top:1px solid;"><a class="en" style="color:#333;" href="http://bearkid.github.io">BearKid.github.io</a></td>
+				<td rowspan="3" style="width:110px;height: 165px;position: relative;padding: 0px;border-top:1px solid;">
+					<!--
 					<img id="portrait" src="image/me.jpg" />
+					-->
+					<div style="font-size:40px;line-height:1.5em;text-align:center;font-family: consolas;">CALL</br>M    E</div>
 				</td>
 			</tr>
 			<tr>
-				<td>教育：</td>
+				<td><img class="icon" src="image/education.png"/><span>教育：</span></td>
 				<td>暨南大学 | 电子商务 | 本科</td>
 			</tr>
 			<tr>
-				<td>证书：</td>
+				<td><img class="icon" src="image/certification.png"/><span>证书：</span></td>
 				<td>2011/12 大学英语四级</br>2014/03 大学英语六级</td>
 			</tr>
 			<tr>
-				<td>E-mail：</td>
+				<td><img class="icon" src="image/email.png"/><span>E-mail：</span></td>
 				<td colspan="2">1030240314@qq.com</td>
 			</tr>
 			<tr>
-				<td>手机：</td>
+				<td><img class="icon" src="image/phone.png"/><span>手机：</span></td>
 				<td colspan="2">15889676260</td>
 			</tr>
 			<tr>
-				<td>其他：</td>
+				<td><img class="icon" src="image/other.png"/>其他：</span></td>
 				<td colspan="2">男 | 1993年1月生 | 深圳-南山区</td>
 			</tr>
 		</table>
