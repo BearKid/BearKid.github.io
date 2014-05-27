@@ -136,7 +136,7 @@ ul{
 		<table>
 			<tr>
 				<td style="width: 105px;border-top:1px solid;"><img class="icon" src="image/home.png"/><span>主页：</span></td>
-				<td style="border-top:1px solid;"><a class="en" style="color:#333;" href="http://bearkid.github.com">BearKid.github.io</a></td>
+				<td style="border-top:1px solid;"><a class="en" style="color:#333;" href="http://bearkid.github.com">bearkid.github.com</a></td>
 				<td rowspan="3" style="width:110px;height: 165px;position: relative;padding: 0px;border-top:1px solid;">
 					<!--
 					<img id="portrait" src="image/me.jpg" />
@@ -150,7 +150,7 @@ ul{
 			</tr>
 			<tr>
 				<td><img class="icon" src="image/certification.png"/><span>证书：</span></td>
-				<td>2014/3计算机二级Java</br>2011/12 大学英语四级</br>2014/03 大学英语六级</td>
+				<td>2014/03 计算机二级Java</br>2011/12 大学英语四级</br>2014/03 大学英语六级</td>
 			</tr>
 			<tr>
 				<td><img class="icon" src="image/email.png"/><span>E-mail：</span></td>
@@ -213,20 +213,13 @@ var li1 = list.eq(0);
 var liWidth = $("#left").width()-li1.css("padding-left").replace("px","")- li1.css("padding-right").replace("px","");
 list.css("width",liWidth);
 var liSpeed = 400;
-list.eq(0).animate({"margin-left":0},liSpeed);
-setTimeout(function(){
-	list.eq(1).animate({"margin-left":0},liSpeed);
-},liSpeed);
-setTimeout(function(){
-	list.eq(2).animate({"margin-left":0},liSpeed);
-},2*liSpeed);
-/*setTimeout(function(){
-	$("#portrait").fadeIn(100).animate({
-		"width":"100%",
-		"top":0,
-		"left":0,
-	},500);
-},3*liSpeed);*/
+for(var i in list){
+	(function liSetTimeout(j){
+		setTimeout(function(){
+				list.eq(j).animate({"margin-left":0},liSpeed);
+				},j*liSpeed);
+	})(i);
+}
 
 var slideSpeed = 1500;
 $("#first").css({"visibility":"visible","display":"none"}).slideDown(slideSpeed);
