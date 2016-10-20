@@ -4,8 +4,8 @@
 <title>BearKid</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <meta name="author" content="bearkid.github.io">
-<meta name="keywords" content="slider,jquery,html,js,css,github,网页设计,简历,电子商务">
-<meta name="description" content="我叫卢伟标，暨南大学电子商务专业的一枚学生，这是我的个人主页">
+<meta name="keywords" content="java,web,programmer,程序员">
+<meta name="description" content="90后程序员，这是我的个人主页">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <script src="js/jquery.js"></script>
 <link href="css/common.css" rel="stylesheet"/>
@@ -150,7 +150,7 @@ ul{
 			</tr>
 			<tr>
 				<td><img class="icon" src="image/certification.png"/><span>证书：</span></td>
-				<td>2014/03 计算机二级Java</br>2011/12 大学英语四级</br>2014/03 大学英语六级</td>
+				<td>2014/03 大学英语六级</td>
 			</tr>
 			<tr>
 				<td><img class="icon" src="image/email.png"/><span>E-mail：</span></td>
@@ -158,46 +158,51 @@ ul{
 			</tr>
 			<tr>
 				<td><img class="icon" src="image/phone.png"/><span>手机：</span></td>
-				<td colspan="2">15889676260</td>
+				<td colspan="2">15217368223</td>
 			</tr>
 			<tr>
 				<td><img class="icon" src="image/other.png"/>其他：</span></td>
-				<td colspan="2">男 | 1993年1月生 | 深圳-南山区</td>
+				<td colspan="2">男 | 1993年1月生 | 东莞</td>
 			</tr>
 		</table>
 	</div>
 	<div id="self-assessment">
 		<div class="title">自我评价</div>
-		<div class="content">
-			主要接触JAVA，有J2EE开发经验，参与过《深圳欢乐谷内部业务系统项目》、创业项目《乡镇通导购平台》、《学院活动报名系统》等的开发。</br>
-			懂网页设计、PHP、C语言，数据库。</br>
-			了解数据结构、算法等计算机相关知识。</br>
-			对软件、游戏开发、网站开发感兴趣。</br>
-		</div>
+		<div id="self-assessment-content" class="content"> </div>
 	</div>
 	<div id="internship">
-		<div class="title">实习经历</div>
+		<div class="title">我的经历</div>
 		<ul class="content">
-			<li style="border-radius: 5px 5px 0px 0px;"><strong>金蝶软件（深圳） | 渠道伙伴业务部 | 实习生</strong>  2013/07 -- 2013/08</br> 行业类别：计算机软件 | 企业性质：上市公司</br>
-			工作描述：<strong>使用photoshop等软件制作宣传期刊，与合作伙伴进行沟通</strong>
+			<li style="border-radius: 5px 5px 0px 0px;"><strong>智通人才连锁股份有限公司 | 研发中心开发部 | Java软件工程师</strong>  2015/01 -- 至今</br> 行业类别：人力资源服务 | 企业性质：上市公司</br>
+			工作描述：<strong>负责集团核心互联网产品智通人才网的升级迭代开发与功能优化维护。涉及C端用户产品的PC版、触屏版、微信版,企业端产品智聘,运营支撑系统。作为核心开发者,参与了核心模块、服务的设计开发以及架构优化改进的工作</strong>
 			</li>
-			<li><strong>深圳哈克文化有限公司 | 运营部 | 实习生</strong>  2012/07 -- 2012/08</br>
-			行业类别：娱乐/体育/休闲 | 企业性质：民营</br>
-			工作描述：<strong>引导顾客完成职业体验流程</br></strong>
-			</li>
-			<li><strong>深圳市兴泰季候风服饰有限公司 | 电子商务部 | 销售客服</strong>  2011/11 -- 2011/11</br>
-			行业类别：耐用消费品（服饰/纺织/皮革/家具/家电） | 企业性质：民营</br>
-			工作描述：<strong>淘宝客服</strong></br>
-			</li>
-			<li><strong>真心网 | 推广部 | 实习生</strong> 2011/10 -- 2011/11</br>
-			行业类别：互联网/电子商务 | 企业性质：民营</br>
-			工作描述：<strong>负责网站的SEO工作</strong></br>
+			<li style="border-radius: 5px 5px 0px 0px;">
+				<strong>目前正在了解感兴趣的nodeJS、mongoDB、搜索引擎elasticsearch、solr。</strong>
 			</li>
 		</ul>
 	</div>
 </div>
 </div>
 </body>
+<script>
+var Period = function (startDate, endDate) {
+	this.startDate = startDate;
+	this.endDate = endDate;
+
+	Period.prototype.getYearField = function () {
+		console.log(startDate + ", " + endDate)
+		return Math.ceil((endDate.getTime() - startDate.getTime()) / 24 / 3600000 / 365);
+	}
+}
+</script>
+<script>
+var selfAssessmentContentObj = document.getElementById("self-assessment-content");
+var javaYears = new Period(new Date("2014-01-01"), new Date()).getYearField();
+var selfAssessmentContent = javaYears + "年Java使用经验," + (javaYears - 1) + "年J2EE开发经验。熟悉掌握面向对象编程, 熟悉关系型数据库MySQL、NoSQL数据库Redis的使用。" +
+		"<br/>熟悉使用Java主流开发中的第三方开源框架或工具库,如Spring、Hibernate、Gson、Apache HttpClient等。" +
+		"<br/>有一些分布式系统的开发经验,对分布式架构、高可用高性能的话题比较感兴趣。" ;
+selfAssessmentContentObj.innerHTML = selfAssessmentContent;
+</script>
 <script>
 <!-- fit dom elements to window-->
 var leftPart = $("#left");
